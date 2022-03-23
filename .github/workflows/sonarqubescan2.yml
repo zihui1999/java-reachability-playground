@@ -17,6 +17,4 @@ jobs:
         cache: maven
     - name: Build with Maven cloud
       run:  mvn -B verify sonar:sonar 
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+     
