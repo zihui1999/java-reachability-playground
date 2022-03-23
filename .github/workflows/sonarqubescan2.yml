@@ -1,4 +1,4 @@
-name: New Java CI with Maven
+name: Run SonarQube with Maven
 
 on: push
 
