@@ -4,6 +4,7 @@ on: push
 jobs:
   build:
     runs-on: ubuntu-latest
+    name: Run unit tests and SAST scan on the source code 
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 11
@@ -19,6 +20,7 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
   security:
     runs-on: ubuntu-latest
+    name: Run the SCA scan on the source code
     steps:
       - uses: actions/checkout@master
       - name: RunSnyk to check for vulnerabilities
@@ -28,7 +30,7 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
   zap_scan:
     runs-on: ubuntu-latest
-    name: Scan the web application
+    name: Run DAST scan on the web application
     steps:
       - name: Checkout
         uses: actions/checkout@v2
