@@ -3,8 +3,9 @@ name: OWASP ZAP Integration with GitHub Actions
 on: [push]
 
 jobs:
-permissions: write-all
+
   zap_scan:
+    permissions: write-all
     runs-on: ubuntu-latest
     name: Scan the web applications
     steps:
